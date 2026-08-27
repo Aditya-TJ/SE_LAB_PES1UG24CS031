@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" modified="2024-08-27T17:00:00.000Z" agent="Antigravity SE Lab 1" version="22.1.18" type="device">
+  <diagram id="multi-vendor-marketplace" name="Multi-Vendor Artisan E-Commerce Marketplace">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- System Boundary -->
+        <mxCell id="boundary" value="Multi-Vendor Artisan E-Commerce Marketplace" style="shape=swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=1;container=1;collapsible=0;strokeWidth=2;fillColor=#F8FAFC;strokeColor=#1E3A8A;fontStyle=1;fontSize=14;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="260" y="80" width="580" height="640" as="geometry" />
+        </mxCell>
+        
+        <!-- Use Cases inside boundary -->
+        <mxCell id="uc1" value="UC-01: Browse &amp; Search Catalog" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1E3A8A;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="60" width="220" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc2" value="UC-02: Manage Shopping Cart" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1E3A8A;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="140" width="220" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc3" value="UC-03: Place Order&#xa;[Multi-Vendor Checkout]" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#1D4ED8;strokeWidth=2.5;fontSize=12;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="230" width="230" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc5" value="UC-05: Apply Discount Code" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1E3A8A;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="boundary">
+          <mxGeometry x="45" y="340" width="220" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc4" value="UC-04: Process Split Payment&#xa;[5% Fee &amp; Vendor Escrow]" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#15803D;strokeWidth=2.5;fontSize=12;fontStyle=1;fontColor=#166534;" vertex="1" parent="boundary">
+          <mxGeometry x="320" y="230" width="230" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc6" value="UC-06: Manage Storefront &amp; Catalog" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#92400E;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#92400E;" vertex="1" parent="boundary">
+          <mxGeometry x="120" y="450" width="260" height="55" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="uc7" value="UC-07: Fulfill Order" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#92400E;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#92400E;" vertex="1" parent="boundary">
+          <mxGeometry x="140" y="540" width="220" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Include relationship: Place Order -> Process Split Payment -->
+        <mxCell id="rel_inc" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeWidth=2;strokeColor=#1E3A8A;fontStyle=1;fontSize=11;labelBackgroundColor=#FFFFFF;" edge="1" parent="boundary" source="uc3" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Extend relationship: Apply Discount Code -> Place Order -->
+        <mxCell id="rel_ext" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeWidth=2;strokeColor=#1E3A8A;fontStyle=1;fontSize=11;labelBackgroundColor=#FFFFFF;" edge="1" parent="boundary" source="uc5" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Actors outside boundary -->
+        <mxCell id="act_shopper" value="Shopper&#xa;(Primary Actor)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#E0E7FF;strokeColor=#1E3A8A;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="90" y="210" width="60" height="110" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act_artisan" value="Artisan Vendor&#xa;(Primary Actor)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#92400E;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="90" y="520" width="60" height="110" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="act_gateway" value="&amp;lt;&amp;lt;external system&amp;gt;&amp;gt;&#xa;Payment Gateway&#xa;(Secondary Actor)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#F0FDF4;strokeColor=#15803D;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="970" y="280" width="60" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Associations -->
+        <mxCell id="assoc1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#1E3A8A;" edge="1" parent="1" source="act_shopper" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc2" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#1E3A8A;" edge="1" parent="1" source="act_shopper" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc3" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#1E3A8A;" edge="1" parent="1" source="act_shopper" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc4" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#92400E;" edge="1" parent="1" source="act_artisan" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc5" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#92400E;" edge="1" parent="1" source="act_artisan" target="uc7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc6" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#15803D;" edge="1" parent="1" source="act_gateway" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

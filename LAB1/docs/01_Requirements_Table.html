@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Requirements Table - Problem Statement #31</title>
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 6mm 10mm 6mm 10mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #111827;
+    background: #ffffff;
+    line-height: 1.24;
+    font-size: 8pt;
+  }
+  .header-card {
+    border: 1.5px solid #1e3a8a;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin-bottom: 5px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left h1 {
+    font-size: 11.5pt;
+    color: #1e3a8a;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin-bottom: 2px;
+  }
+  .header-left h2 {
+    font-size: 8.5pt;
+    color: #374151;
+    font-weight: 600;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 7.8pt;
+    color: #1f2937;
+  }
+  .badge-tag {
+    display: inline-block;
+    background: #1e3a8a;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 7.4pt;
+    letter-spacing: 0.3px;
+  }
+  .context-box {
+    background: #f8fafc;
+    border-left: 3.5px solid #2563eb;
+    padding: 4px 10px;
+    margin-bottom: 5px;
+    font-size: 7.6pt;
+    color: #334155;
+    border-radius: 0 4px 4px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 4.5px 6px;
+    font-size: 7.6pt;
+    border: 1px solid #1e3a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 3.5px 6px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+    font-size: 7.3pt;
+    color: #1f2937;
+  }
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  .req-id {
+    font-weight: 700;
+    color: #1e3a8a;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .badge-func {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 6.8pt;
+    background: #e0e7ff;
+    color: #3730a3;
+  }
+  .badge-nonfunc {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 6.8pt;
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .badge-high {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 6.8pt;
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  .badge-med {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 6.8pt;
+    background: #e0f2fe;
+    color: #075985;
+  }
+  .pass-text {
+    color: #15803d;
+    font-weight: 700;
+  }
+  .fail-text {
+    color: #b91c1c;
+    font-weight: 700;
+  }
+  .section-divider {
+    background-color: #e2e8f0;
+    font-weight: 700;
+    color: #0f172a;
+    padding: 3px 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 7.2pt;
+  }
+  .footer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 6.8pt;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-card">
+  <div class="header-left">
+    <h1>PES UNIVERSITY &bull; DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</h1>
+    <h2>Software Engineering Lab 1: Requirements Engineering & UML Use-Case Modelling</h2>
+  </div>
+  <div class="header-right">
+    <div><span class="badge-tag">PROBLEM STATEMENT #31</span></div>
+    <div style="margin-top: 3px;"><strong>Student:</strong> Aditya T J (PES1UG24CS031)</div>
+    <div><strong>Domain:</strong> Retail, E-Commerce & Finance</div>
+  </div>
+</div>
+
+<div class="context-box">
+  <strong>System Overview:</strong> An online marketplace enabling independent craftspeople to set up storefronts, manage product catalogs, receive orders, and receive automated split payouts with platform commission deductions. 
+  &bull; <strong>Target Actors:</strong> Shopper, Artisan Vendor, Payment Gateway (External System)
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 6.5%; text-align: center;">Req ID</th>
+      <th style="width: 11%;">Type</th>
+      <th style="width: 25%;">Description</th>
+      <th style="width: 6.5%; text-align: center;">Priority</th>
+      <th style="width: 25%;">Acceptance Criteria</th>
+      <th style="width: 14%;">Rationale</th>
+      <th style="width: 12%;">Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="7" class="section-divider">Functional Requirements (FR-001 to FR-005)</td>
+    </tr>
+    <tr>
+      <td class="req-id">FR-001</td>
+      <td><span class="badge-func">Functional</span></td>
+      <td>The system shall split customer cart payments at checkout, allocating respective item earnings to multiple independent vendor accounts after deducting a 5% platform fee.</td>
+      <td style="text-align: center;"><span class="badge-high">High</span></td>
+      <td><span class="pass-text">Pass:</span> Split payout calculations balance to total cart value.<br><span class="fail-text">Fail:</span> Payout calculation discrepancies.</td>
+      <td>Ensures accurate, automated financial distribution to independent artisans while securing platform transaction revenue (Given in PS #31).</td>
+      <td>Core monetization requirement; calculations must balance to 100% of order total.</td>
+    </tr>
+    <tr>
+      <td class="req-id">FR-002</td>
+      <td><span class="badge-func">Functional</span></td>
+      <td>The system shall allow artisan vendors to set up and manage an independent storefront profile, including artisan bio, shop policies, and linked payout disbursement account details.</td>
+      <td style="text-align: center;"><span class="badge-high">High</span></td>
+      <td><span class="pass-text">Pass:</span> Storefront profile updates and verified payout details are successfully saved and rendered publicly on the artisan's storefront page.<br><span class="fail-text">Fail:</span> Missing mandatory profile fields or unvalidated payout details prevent storefront publishing.</td>
+      <td>Enables independent craftspeople to establish their distinct brand identity and receive automated financial payouts.</td>
+      <td>Peer: Validated banking credentials required before activating vendor storefront.</td>
+    </tr>
+    <tr>
+      <td class="req-id">FR-003</td>
+      <td><span class="badge-func">Functional</span></td>
+      <td>The system shall allow artisan vendors to create, update, and manage handcrafted product listings with titles, descriptions, pricing, inventory quantities, and high-resolution product media.</td>
+      <td style="text-align: center;"><span class="badge-high">High</span></td>
+      <td><span class="pass-text">Pass:</span> New or updated product listings appear in the artisan's catalog and marketplace search within 5 seconds with accurate stock counts.<br><span class="fail-text">Fail:</span> Listings with invalid pricing (<= 0) or missing mandatory attributes fail validation and are rejected.</td>
+      <td>Empowers artisans to maintain an up-to-date catalog of handcrafted items and prevent overselling through inventory synchronization.</td>
+      <td>Real-time stock validation prevents race conditions during simultaneous customer checkouts.</td>
+    </tr>
+    <tr>
+      <td class="req-id">FR-004</td>
+      <td><span class="badge-func">Functional</span></td>
+      <td>The system shall allow shoppers to add handcrafted items from multiple independent artisan vendors into a unified cart and execute a single consolidated checkout order.</td>
+      <td style="text-align: center;"><span class="badge-high">High</span></td>
+      <td><span class="pass-text">Pass:</span> Cart aggregates items across distinct vendors, calculates itemized totals, applies applicable coupon discounts, and initiates payment authorization.<br><span class="fail-text">Fail:</span> Cart fails to itemize multi-vendor items or calculation mismatch occurs between item sums and total payable amount.</td>
+      <td>Provides a seamless purchasing experience for shoppers buying from multiple artisans simultaneously without requiring separate checkout transactions.</td>
+      <td>Consolidated order is decomposed into vendor sub-orders upon payment authorization.</td>
+    </tr>
+    <tr>
+      <td class="req-id">FR-005</td>
+      <td><span class="badge-func">Functional</span></td>
+      <td>The system shall notify artisan vendors of confirmed customer orders containing their respective products and allow vendors to update fulfillment status (Processing, Dispatched, Delivered) with carrier tracking details.</td>
+      <td style="text-align: center;"><span class="badge-med">Medium</span></td>
+      <td><span class="pass-text">Pass:</span> Vendor dashboard immediately displays incoming sub-orders upon successful checkout and status transitions trigger automated notifications to the shopper.<br><span class="fail-text">Fail:</span> Order details fail to isolate vendor-specific items or status updates fail to persist.</td>
+      <td>Enables independent artisans to fulfill customer orders independently while keeping shoppers informed of dispatch status.</td>
+      <td>Status changes send transactional push/email notifications with courier tracking links.</td>
+    </tr>
+    <tr>
+      <td colspan="7" class="section-divider">Non-Functional Requirements (NFR-001 & NFR-002)</td>
+    </tr>
+    <tr>
+      <td class="req-id">NFR-001</td>
+      <td><span class="badge-nonfunc">Performance & Security</span></td>
+      <td>The product catalog must support high-resolution image rendering with CDN caching delivering load times < 500 ms.</td>
+      <td style="text-align: center;"><span class="badge-high">High</span></td>
+      <td><span class="pass-text">Pass:</span> Benchmarking tests confirm target latency (< 500 ms) and security standards under simulated peak load.<br><span class="fail-text">Fail:</span> Catalog page load latency >= 500 ms or CDN caching failure under peak load.</td>
+      <td>Ensures fast page loading for image-heavy handcrafted goods, preserving user engagement and minimizing bounce rates (Given in PS #31).</td>
+      <td>Edge CDN nodes cache optimized image formats (WebP/AVIF); benchmarked via Lighthouse.</td>
+    </tr>
+    <tr>
+      <td class="req-id">NFR-002</td>
+      <td><span class="badge-nonfunc">Security & Compliance</span></td>
+      <td>The system shall encrypt all sensitive financial transactions and payout account data in transit using TLS 1.3 and at rest using AES-256 encryption, adhering to PCI-DSS Level 1 compliance standards.</td>
+      <td style="text-align: center;"><span class="badge-high">High</span></td>
+      <td><span class="pass-text">Pass:</span> Automated vulnerability scans and penetration audits confirm 100% encryption coverage for payment payloads with zero plain-text storage of payment credentials.<br><span class="fail-text">Fail:</span> Any unencrypted transmission or unmasked storage of sensitive banking/card data detected.</td>
+      <td>Protects shoppers' financial credentials and vendors' banking payout information against unauthorized access, data breaches, and regulatory penalties.</td>
+      <td>Immutable append-only ledger verifies double-entry reconciliation between payouts and fees.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <span>Software Engineering Lab (UE24CS252) &bull; PES University Department of Computer Science & Engineering</span>
+  <span>Student: Aditya T J (PES1UG24CS031)</span>
+  <span>Problem Statement #31: Multi-Vendor Artisan E-Commerce Marketplace &bull; Page 1 of 1</span>
+</div>
+
+</body>
+</html>
