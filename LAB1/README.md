@@ -40,7 +40,6 @@ The **Multi-Vendor Artisan E-Commerce Marketplace** is an online platform that e
 
 ![UML Use-Case Diagram](docs/02_UseCase_Diagram.png)
 
-*The vector diagram is submitted as [`docs/02_UseCase_Diagram.pdf`](docs/02_UseCase_Diagram.pdf). The diagram can be viewed and edited in [draw.io / diagrams.net](https://app.diagrams.net) via [`diagram/artisan_marketplace_usecase.drawio`](diagram/artisan_marketplace_usecase.drawio).*
 
 ### Actor & Use Case Traceability
 
