@@ -30,7 +30,6 @@ An online marketplace enabling independent craftspeople to set up storefronts, m
 
 ![UML Use-Case Diagram](LAB1/docs/02_UseCase_Diagram.png)
 
-*To edit the diagram, open [`LAB1/diagram/artisan_marketplace_usecase.drawio`](LAB1/diagram/artisan_marketplace_usecase.drawio) in [app.diagrams.net (Draw.io)](https://app.diagrams.net).*
 
 ---
 
