@@ -13,10 +13,20 @@ def bezier(p0, p1, p2, p3, t):
     y = u ** 3 * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t ** p2[1] + t ** 3 * p3[1]
     return pygame.Vector2(x, y)
 
+CURRENT_WAVE = 1
 
 def enemy_tint(kind):
-    """Return an (r, g, b) colour override for an enemy kind, or None for the default."""
-    pass
+    """Return a wave-dependent colour override."""
+    shift = (CURRENT_WAVE - 1) * 25
+
+    if kind == "boss":
+        return (min(255, 90 + shift), 220, min(255, 90 + shift // 2))
+    if kind == "red":
+        return (230, min(255, 70 + shift), 70)
+    if kind == "blue":
+        return (80, min(255, 140 + shift), 240)
+
+    return None
 
 
 def on_wave_start(wave):
@@ -74,6 +84,8 @@ class Enemy:
 
 
 def spawn_wave(wave):
+    global CURRENT_WAVE
+    CURRENT_WAVE = wave
     enemies, index = [], 0
     layout = [("boss", 4, 90), ("red", 8, 130), ("red", 8, 170), ("blue", 8, 210)]
     for kind, count, y in layout:
